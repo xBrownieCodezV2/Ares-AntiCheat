@@ -1,0 +1,12 @@
+name: Ares
+version: ${project.version}
+main: com.gladurbad.ares.AresPlugin
+authors: [ GladUrBad, Rhys, demonpvp, Elevated, Tecnio ]
+description: Ares Anticheat solution for Spigot servers.
+website: ares.ac
+
+commands:
+  ares:
+    description: Ares Anticheat main command
+    usage: /<command>
+    permission: ares.staff

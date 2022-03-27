@@ -1,0 +1,235 @@
+#           _____                    _____                    _____                    _____
+#          /\    \                  /\    \                  /\    \                  /\    \
+#         /##\    \                /##\    \                /##\    \                /##\    \
+#        /####\    \              /####\    \              /####\    \              /####\    \
+#       /######\    \            /######\    \            /######\    \            /######\    \
+#      /###/\###\    \          /###/\###\    \          /###/\###\    \          /###/\###\    \
+#     /###/__\###\    \        /###/__\###\    \        /###/__\###\    \        /###/__\###\    \
+#    /####\   \###\    \      /####\   \###\    \      /####\   \###\    \       \###\   \###\    \
+#   /######\   \###\    \    /######\   \###\    \    /######\   \###\    \    ___\###\   \###\    \
+#  /###/\###\   \###\    \  /###/\###\   \###\____\  /###/\###\   \###\    \  /\   \###\   \###\    \
+# /###/  \###\   \###\____\/###/  \###\   \###\    \/###/__\###\   \###\____\/##\   \###\   \###\____\
+# \##/    \###\  /###/    /\##/   |####\  /###|____|\###\   \###\   \##/    /\###\   \###\   \##/    /
+#  \/____/ \###\/###/    /  \/____|#####\/###/    /  \###\   \###\   \/____/  \###\   \###\   \/____/
+#           \######/    /         |#########/    /    \###\   \###\    \       \###\   \###\    \
+#            \####/    /          |##|\####/    /      \###\   \###\____\       \###\   \###\____\
+#            /###/    /           |##| \##/____/        \###\   \##/    /        \###\  /###/    /
+#           /###/    /            |##|  ~|               \###\   \/____/          \###\/###/    /
+#          /###/    /             |##|   |                \###\    \               \######/    /
+#         /###/    /              \##|   |                 \###\____\               \####/    /
+#         \##/    /                \#|   |                  \##/    /                \##/    /
+#          \/____/                  \|___|                   \/____/                  \/____/
+#
+# Ares AntiCheat Configuration.
+#
+# Developed by GladUrBad, Rhys, FlyCode, ObjectWeb, Jumba Jookiba, AxisAlignedBB, EvictingList, Object, Elevated, Tecnio
+# Special credits to $$$ Verus Heavy $$$
+# Thank you Islandscout I just sold your anti-cheat source to mommy for 1000000 zimbabwean dollares!!
+#
+# In this configuration there are a plethora of settings you can change to fine tune Ares to your liking. You can adjust
+# core parts of Ares in the "Flags" section, the appearance in the "Messages" section, and you can adjust individual
+# check settings in the "Checks" section.
+#
+# Contact developers if you have any questions.
+
+#    ______   _
+#   |  ____| | |
+#   | |__    | |   __ _    __ _   ___
+#   |  __|   | |  / _` |  / _` | / __|
+#   | |      | | | (_| | | (_| | \__ \
+#   |_|      |_|  \__,_|  \__, | |___/
+#                          __/ |
+#                         |___/
+#
+# How many seconds should there be between each alert per check (in milliseconds)?
+time-between-alerts: 0
+
+# Should Ares tell the whole server a player has been banned?
+broadcast-punishment: false
+
+# Kick the player if they haven't responded to a transaction in this amount of milliseconds.
+transaction-response-timeout: 15000
+
+# Creative players will bypass the whole anti-cheat.
+creative-bypass: false
+
+#    __  __
+#   |  \/  |
+#   | \  / |   ___   ___   ___    __ _    __ _    ___   ___
+#   | |\/| |  / _ \ / __| / __|  / _` |  / _` |  / _ \ / __|
+#   | |  | | |  __/ \__ \ \__ \ | (_| | | (_| | |  __/ \__ \
+#   |_|  |_|  \___| |___/ |___/  \__,_|  \__, |  \___| |___/
+#                                         __/ |
+#                                        |___/
+#
+# Placeholders for messages:
+# %PLAYER_NAME% - Name of the player flagging.
+# %UUID% - UUID of the player flagging.
+# %PLAYER_VERSION% - Version of the player.
+# %CHECK_NAME% - Name of the check flagged.
+# %PING% - Ping of the player.
+# %LAG_TICK% - Time elapsed since last player lag, in ticks.
+# %VL% - Violation level of the check.
+# %MAX_VL% - Maximum violation level of the check.
+# %TPS% - Server tps.
+# %CLIENT_BRAND% - Client brand of the player.
+# %TOTAL_VL% - Total violation level of all checks for the player.
+
+broadcast-punishment-format: "&cAres banned %PLAYER_NAME% for cheating."
+alert-format: "&4&lAres&r&7 >> &f%PLAYER_NAME% &7failed &f%CHECK_NAME% &7VL[&4%VL%&7]"
+alert-hover-format: "&7Version: &4%PLAYER_VERSION% &7| Ping: &4%PING%ms &7| TPS: &4%TPS% \n%DEBUG% \n&4Click to teleport to %PLAYER_NAME%"
+
+toggled-alerts-on: "Alerts &aon."
+toggled-alerts-off: "Alerts &4off."
+
+info-command:
+  - "&c[Ares Player Information]"
+  - ""
+  - "&cGame version: %PLAYER_VERSION%"
+  - "&cClient brand: %CLIENT_BRAND%"
+  - "&cTotal violation level: %TOTAL_VL%"
+  - "&cLast lag time: %LAG_TICK%"
+
+invalid-arguments:
+  - "&cInvalid arguments."
+  - "&cThe required arguments for this command are:"
+
+argument-response-color: "&c"
+
+command-response-header: "&c[Ares AntiCheat Commands]"
+command-response-color: "&c"
+
+
+#     _____   _                     _
+#    / ____| | |                   | |
+#   | |      | |__     ___    ___  | | __  ___
+#   | |      | '_ \   / _ \  / __| | |/ / / __|
+#   | |____  | | | | |  __/ | (__  |   <  \__ \
+#    \_____| |_| |_|  \___|  \___| |_|\_\ |___/
+#
+# enabled: If the check should run, set true. Set false if you have any issues.
+# decay-vl-older-than: In seconds, how old should VL be before it gets removed? This can help keep away false bans. Set 0 to have no decay.
+# alert-at-vl: Sometimes checks randomly verbose once or twice, you can heighten this value to keep away false alerts.
+# punish-command: When the maximum VL is reached, this command will execute. Use the message placeholders above. Set blank for nothing to be ran.
+#
+
+checks:
+  AimA:
+    enabled: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AimB:
+    enabled: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AimC:
+    enabled: true
+    maximum-vl: 10
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AimD:
+    enabled: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AimE:
+    enabled: true
+    maximum-vl: 5
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AimF:
+    enabled: true
+    maximum-vl: 5
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  AutoClickerA:
+    enabled: true
+    maximum-vl: 10
+    punish-command: ""
+  AutoClickerB:
+    enabled: true
+    maximum-vl: 10
+    punish-command: ""
+  AutoClickerC:
+    enabled: true
+    maximum-vl: 10
+    punish-command: ""
+  AutoClickerD:
+    enabled: true
+    maximum-vl: 10
+    punish-command: ""
+  AutoClickerE:
+    enabled: true
+    maximum-vl: 10
+    punish-command: ""
+  BadPacketsA:
+    enabled: true
+    maximum-vl: 1
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  FlyA:
+    enabled: true
+    setback: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  FlyB:
+    enabled: true
+    setback: true
+    maximum-vl: 10
+    punish-command: "kick %PLAYER_NAME% Suspicious motion activity"
+  FlyC:
+    enabled: true
+    setback: true
+    maximum-vl: 10
+    punish-command: "kick %PLAYER_NAME% Suspicious motion activity"
+  FlyD:
+    enabled: true
+    setback: true
+    maximum-vl: 10
+    punish-command: "kick %PLAYER_NAME% Suspicious motion activity"
+  FlyE:
+    enabled: true
+    setback: true
+    maximum-vl: 10
+    punish-command: "kick %PLAYER_NAME% Suspicious motion activity"
+  PostA:
+    enabled: true
+    maximum-vl: 10
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  PostB:
+    enabled: true
+    alert-at-vl: 5
+    maximum-vl: 10
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  PostC:
+    enabled: true
+    maximum-vl: 10
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  ReachA:
+    enabled: true
+    maximum-vl: 15
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  SpeedA:
+    enabled: true
+    setback: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  SpeedB:
+    enabled: true
+    setback: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  StepA:
+    enabled: true
+    setback: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  TimerA:
+    enabled: true
+    setback: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  VelocityA:
+    enabled: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+  VelocityB:
+    enabled: true
+    maximum-vl: 20
+    punish-command: "ban %PLAYER_NAME% Unfair Advantage"
+

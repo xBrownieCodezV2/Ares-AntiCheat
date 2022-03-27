@@ -1,0 +1,6 @@
+name: AresBungee
+version: ${project.version}
+main: com.gladurbad.ares.bungee.AresBungeePlugin
+authors: [ GladUrBad ]
+description: Ares bungeecord connection plugin.
+website: ares.ac
